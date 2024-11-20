@@ -3,7 +3,7 @@ import Login from "@/components/Login";
 import Main from "@/components/Main";
 
 export const metadata = {
-  title: "Broodl + Dashboard",
+  title: "Broodl ⋅ Dashboard",
 };
 
 export default function DashboardPage() {
