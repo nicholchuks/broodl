@@ -1,23 +1,15 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import { Fugaz_One } from "next/font/google";
-
-import { Roboto } from "next/font/google";
+import { Fugaz_One, Open_Sans } from "next/font/google";
+import Link from "next/link";
 
 const fugaz = Fugaz_One({
   weight: "400",
   subsets: ["latin"],
 });
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const openSans = Open_Sans({
+  subsets: ["latin"],
 });
 
 export const metadata = {
@@ -34,12 +26,25 @@ export default function RootLayout({ children }) {
     </header>
   );
 
-  const footer = <footer></footer>;
+  const footer = (
+    <footer className="p-4 sm:p-8 grid place-items-center">
+      <Link href="" target="_blank">
+        <p
+          className={
+            "text-indigo-500 duration-200 hover:text-white hover:bg-indigo-500  " +
+            fugaz.className
+          }
+        >
+          Built by Nickoe 💛
+        </p>
+      </Link>
+    </footer>
+  );
 
   return (
     <html lang="en">
       <body
-        className={`w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col text-slate-800 ${openSans.className} antialiased`}
       >
         {header}
         {children}
