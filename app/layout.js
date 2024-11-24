@@ -20,9 +20,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const header = (
     <header className="p-4 sm:p-8 flex items-center justify-between gap-4">
-      <h1 className={`${fugaz.className} text-base sm:text-lg textGradient`}>
-        Broodl
-      </h1>
+      <Link href={"/"}>
+        <h1 className={`${fugaz.className} text-base sm:text-lg textGradient`}>
+          Broodl
+        </h1>
+      </Link>
+      <div className="flex items-center justify-between">PLACEHOLDER</div>
     </header>
   );
 
