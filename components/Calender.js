@@ -1,5 +1,7 @@
+"use client";
+
 import { baseRating, gradients } from "@/utils";
-import React from "react";
+import React, { useState } from "react";
 baseRating;
 
 const months = {
@@ -28,28 +30,45 @@ const dayList = [
   "Saturday",
 ];
 
-const data = {
-  15: 2,
-  16: 4,
-  17: 1,
-  18: 3,
-  19: 5,
-  20: 2,
-  21: 4,
-  22: 1,
-  23: 3,
-  24: 5,
-};
+// const demoData = {
+//   15: 2,
+//   16: 4,
+//   17: 1,
+//   18: 3,
+//   19: 5,
+//   20: 2,
+//   21: 4,
+//   22: 1,
+//   23: 3,
+//   24: 5,
+// };
 
 export default function Calender(props) {
-  const { demo } = props;
-  const year = 2024;
-  const month = "November";
-  const monthNow = new Date(year, Object.keys(months).indexOf(month), 1);
+  const now = new Date();
+  const currentMonth = now.getMonth();
+  const [selectedMonth, setSelectedMonth] = useState(
+    Object.keys(months)[currentMonth]
+  );
+  const [selectedYear, setSelectedYear] = useState(now.getFullYear());
+
+  function handleIncrementMonth(val) {
+
+  }
+  
+
+  console.log("SELECTED MONTH IS: ", selectedMonth);
+  const { demo, data, handleSetMood } = props;
+  // const year = 2024;
+  // const month = "November";
+  const monthNow = new Date(
+    selectedYear,
+    Object.keys(months).indexOf(selectedMonth),
+    1
+  );
   const firstDayOfMonth = monthNow.getDay();
   const daysInMonth = new Date(
-    year,
-    Object.keys(month).indexOf(month) + 1,
+    selectedYear,
+    Object.keys(selectedMonth).indexOf(selectedMonth) + 1,
     0
   ).getDate();
 
