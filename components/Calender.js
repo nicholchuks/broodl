@@ -79,7 +79,7 @@ export default function Calender(props) {
   const numRows = Math.floor(daysToDisplay / 7) + (daysToDisplay % 7 ? 1 : 0);
   return (
     <div className="flex flex-col gap-2">
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-5 gap-4">
         {" "}
         <button
           onClick={() => {
@@ -90,9 +90,9 @@ export default function Calender(props) {
           <i className="fa-solid fa-circle-chevron-left"></i>
         </button>{" "}
         <p
-          className={" text-center capitalize textGradient " + fugaz.className}
+          className={" text-center capitalize col-span-3 whitespace-nowrap textGradient " + fugaz.className}
         >
-          {selectedMonth}
+          {selectedMonth}, {selectedYear}
         </p>{" "}
         <button
           onClick={() => {

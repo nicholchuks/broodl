@@ -4,6 +4,7 @@ import { Fugaz_One, Open_Sans } from "next/font/google";
 import Link from "next/link";
 import { AuthProvider } from "@/context/AuthContext";
 import Head from "./head";
+import Logout from "@/components/Logout";
 
 const fugaz = Fugaz_One({
   weight: "400",
@@ -27,7 +28,7 @@ export default function RootLayout({ children }) {
           Broodl
         </h1>
       </Link>
-     
+      <Logout />
     </header>
   );
 

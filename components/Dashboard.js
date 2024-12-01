@@ -156,6 +156,7 @@ export default function Dashboard() {
         })}
       </div>
       <Calender completedData={data} handleSetMood={handleSetMood} />
+      
     </div>
   );
 }
