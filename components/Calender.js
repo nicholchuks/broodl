@@ -44,6 +44,8 @@ const dayList = [
 // };
 
 export default function Calender(props) {
+  const { demo, completedData, handleSetMood } = props;
+
   const now = new Date();
   const currentMonth = now.getMonth();
   const [selectedMonth, setSelectedMonth] = useState(
@@ -51,15 +53,13 @@ export default function Calender(props) {
   );
   const [selectedYear, setSelectedYear] = useState(now.getFullYear());
 
-  function handleIncrementMonth(val) {
-
-  }
-  
+  // const numericMonth = Object.keys(month);
+  const numericMonth = Object.keys(months).indexOf(selectedMonth);
+  const data = completedData?.[selectedYear]?.[selectedMonth] || {};
+  function handleIncrementMonth(val) {}
 
   console.log("SELECTED MONTH IS: ", selectedMonth);
-  const { demo, data, handleSetMood } = props;
-  // const year = 2024;
-  // const month = "November";
+
   const monthNow = new Date(
     selectedYear,
     Object.keys(months).indexOf(selectedMonth),

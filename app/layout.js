@@ -3,6 +3,7 @@ import "./globals.css";
 import { Fugaz_One, Open_Sans } from "next/font/google";
 import Link from "next/link";
 import { AuthProvider } from "@/context/AuthContext";
+import Head from "./head";
 
 const fugaz = Fugaz_One({
   weight: "400",
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
           Broodl
         </h1>
       </Link>
-      <div className="flex items-center justify-between">PLACEHOLDER</div>
+     
     </header>
   );
 
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <Head />
       <AuthProvider>
         <body
           className={`w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col text-slate-800 ${openSans.className} antialiased`}
