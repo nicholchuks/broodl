@@ -40,7 +40,6 @@ export default function Dashboard() {
 
   const statuses = {
     ...countValues(),
-    average_mood: new Date().toDateString(),
     time_remaining: `${23 - now.getHours()}H ${60 - now.getMinutes()}M`,
   };
 
@@ -115,6 +114,7 @@ export default function Dashboard() {
               </p>
               <p className={" text-base sm:text-lg " + fugaz.className}>
                 {statuses[status]}
+                {status === 'num_days' ? ' 💥' : ''}
               </p>
             </div>
           );
